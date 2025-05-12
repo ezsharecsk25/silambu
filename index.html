@@ -45,7 +45,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 75vh;
+            height: 95vh;
         }
 
         .form-container {
@@ -130,8 +130,9 @@
         }
 
         .bottom-card {
-            position: fixed;
-            bottom: 12px;
+            padding-top: 12px;
+            /* position: fixed;
+            bottom: 12px; */
         }
 
         .bottom-image {
@@ -157,19 +158,25 @@
                 <img src="g-logo.png" alt="Google logo" style="height: 18px; margin-right: 8px;" />
                 Sign in with Google
             </button>
-            <div class="" style="padding-top: 24px; color: grey;">
-                <a href="privacy-policy.html" style="color: grey;font-size: 12px;">Privacy Policy</a>
+            <div class="" style="padding-top: 24px; color: grey; font-size: 10px;">
+                <p>Silambu - csk 25 - File Share is a simple and secure way to upload and share files directly from your Google
+                    Drive account.</p>
+                <p>We use your Google account to authenticate and allow file uploads. Your data stays safe — we never
+                    store files on our servers.</p>
+                <p><a href="privacy-policy.html" style="color: grey;font-size: 12px;">Privacy Policy</a></p>
+                <!-- <a href="privacy-policy.html" style="color: grey;font-size: 12px;">Privacy Policy</a> -->
+            </div>
+            <div class="bottom-card">
+                <div class="" style="font-weight: 500; margin-bottom: 1rem; text-align: center;">Powerd By</div>
+                <div class="bottom-image">
+                    <img src="hi5tech.png" alt="App Logo" style="height: 40px; padding-right: 4px;"
+                        onclick="redirectLink()" />
+                    <img src="linkedin.png" alt="App Logo" style="height: 40px;" onclick="redirectLinkedin()" />
+                </div>
             </div>
             <div class="" style="padding-top: 12px; color: grey;font-size: 12px;">
                 © Silambu
             </div>
-        </div>
-    </div>
-    <div class="bottom-card">
-        <div class="" style="font-weight: 500; margin-bottom: 1rem; text-align: center;">Powerd By</div>
-        <div class="bottom-image">
-            <img src="hi5tech.png" alt="App Logo" style="height: 40px; padding-right: 4px;" onclick="redirectLink()" />
-            <img src="linkedin.png" alt="App Logo" style="height: 40px;" onclick="redirectLinkedin()" />
         </div>
     </div>
     <script>
