@@ -310,6 +310,7 @@
                 return data.id; // Return folder ID
             } else {
                 console.error('Folder creation failed:', data);
+                alert(`Folder creation failed: ${data?.error?.message}`)
                 return null;
             }
         }
