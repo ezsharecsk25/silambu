@@ -210,7 +210,7 @@
         }
 
         // Upload file to Google Drive in the public folder
-        async function uploadToDrive(file) {
+        async function uploadToDrive(file, signal) {
             return new Promise(async (resolve, reject) => {
                 if (!accessToken) {
                     console.log("Please sign in to Google.");
@@ -234,7 +234,7 @@
                     body: formData
                 });
 
-                const response = await fetch(request);
+                const response = await fetch(request, { signal });
                 const data = await response.json();
 
                 if (response.ok) {
@@ -299,6 +299,8 @@
         }
 
         async function handleMediaUpload(e) {
+            controller = new AbortController();
+            const signal = controller.signal;
             const files = e.target.files;
             let fileObjs = Object.keys(files);
             if (fileObjs?.length === 0) return;
@@ -311,7 +313,7 @@
                 stored.push({ id, name: file.name, objectUrl, type, status: "uploading" });
                 renderGallery();
 
-                const success = await uploadToDrive(file)
+                const success = await uploadToDrive(file, signal)
                 if (success) {
                     stored.find(item => item.id === id).status = "uploaded";
                     stored.find(item => item.id === id).mimeType = success.mimeType;
